@@ -47,6 +47,28 @@ public class Main {
             }else {
                 product(lays, cola, chocolate, coin);
             }
+        }else if (coin ==60 && coin < 100){
+            System.out.println("to choose chocolate: 40 - 1");
+            System.out.println("to choose cola: 60 - 2");
+            System.out.println("to choose lays: 100 - more coin - 3");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            int s = Integer.parseInt(br.readLine());
+            if (s==1){
+                System.out.println("Buy chocolate: 40");
+                coin -=40;
+                System.out.println("coin: " + coin);
+            }else if (s==2){
+                System.out.println("Buy cola: 60");
+                coin -=60;
+                System.out.println("coin: " + coin);
+            }else {
+                product(lays, cola, chocolate, coin);
+            }
+        }else if(coin < 40){
+            System.out.println("more coin");
+            product(lays, cola, chocolate, coin);
+        }else {
+            System.out.println("Try agin");
         }
     }
 }

@@ -34,7 +34,7 @@ public class Main {
     static void product(int lays, int cola, int chocolate, int coin) throws IOException {
         coin +=20;
         System.out.println("coin: "+ coin);
-        if(coin == 40 && coin <60 ){
+        if(coin == 40){
             System.out.println("to choose chocolate: 40 - 1");
             System.out.println("to choose cola: 60 - more coin - 2");
             System.out.println("to choose lays: 100 - more coin - 3");
@@ -47,7 +47,24 @@ public class Main {
             }else {
                 product(lays, cola, chocolate, coin);
             }
-        }else if (coin ==60 && coin < 100){
+        }else if (coin ==60 ){
+            System.out.println("to choose chocolate: 40 - 1");
+            System.out.println("to choose cola: 60 - 2");
+            System.out.println("to choose lays: 100 - more coin - 3");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            int s = Integer.parseInt(br.readLine());
+            if (s==1){
+                System.out.println("Buy chocolate: 40");
+                coin -=40;
+                System.out.println("coin: " + coin);
+            }else if (s==2){
+                System.out.println("Buy cola: 60");
+                coin -=60;
+                System.out.println("coin: " + coin);
+            }else {
+                product(lays, cola, chocolate, coin);
+            }
+        }else if(coin == 80){
             System.out.println("to choose chocolate: 40 - 1");
             System.out.println("to choose cola: 60 - 2");
             System.out.println("to choose lays: 100 - more coin - 3");
